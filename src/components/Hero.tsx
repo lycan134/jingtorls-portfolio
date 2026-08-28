@@ -34,9 +34,13 @@ export default function Hero() {
             <div className="flex flex-col gap-3 sm:flex-row">
               <a
                 href="#work"
-                className="rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-zinc-200"
+                className="group inline-flex items-center justify-center gap-3 rounded-full border-2 border-white bg-white px-6 py-3 text-sm font-semibold text-black shadow-[0_10px_30px_rgba(255,255,255,0.12)] transition duration-300 hover:-translate-y-0.5 hover:border-[#b9f7d0] hover:bg-white hover:shadow-[0_12px_34px_rgba(185,247,208,0.2)]"
+                style={{ color: "#0b0d0c" }}
               >
                 View My Work
+                <span aria-hidden="true" className="text-base transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
               </a>
 
               <a

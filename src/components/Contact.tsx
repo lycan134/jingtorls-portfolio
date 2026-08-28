@@ -2,7 +2,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="border-t border-white/10 bg-black px-6 py-32 text-white"
+      className="portfolio-section border-t border-white/10 bg-transparent px-6 py-32 text-white"
     >
       <div className="mx-auto max-w-7xl">
 
@@ -36,14 +36,17 @@ export default function Contact() {
 
                 <a
                 href="mailto:virginiotorlao@gmail.com"
-                className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-zinc-200"
+                className="group inline-flex items-center justify-center gap-3 rounded-full border-2 border-white bg-white px-6 py-3 text-sm font-semibold text-black shadow-[0_10px_30px_rgba(255,255,255,0.1)] transition duration-300 hover:-translate-y-0.5 hover:border-[#b9f7d0] hover:bg-white hover:shadow-[0_12px_34px_rgba(185,247,208,0.18)]"
+                style={{ color: "#0b0d0c" }}
                 >
                 Email Me
-                <span className="ml-2">↗</span>
+                <span aria-hidden="true" className="text-base transition-transform duration-300 group-hover:translate-x-1">↗</span>
                 </a>
 
                 <a
-                href="#"
+                href="https://github.com/lycan134"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-medium text-zinc-300 transition hover:border-white/30 hover:text-white"
                 >
                 GitHub

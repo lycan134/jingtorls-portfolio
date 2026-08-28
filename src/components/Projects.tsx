@@ -180,7 +180,7 @@ export default function Projects() {
   return (
     <section
       id="work"
-      className="border-t border-white/10 bg-black px-6 py-32 text-white"
+      className="portfolio-section border-t border-white/10 bg-transparent px-6 py-32 text-white"
     >
       <div className="mx-auto max-w-7xl">
 
