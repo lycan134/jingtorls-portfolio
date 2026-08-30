@@ -8,7 +8,7 @@ const projects = [
     technologies: ["Python", "PyTorch", "Materials Project", "Machine Learning"],
     metric: "R² 0.98",
     visual: "crystal",
-    href: "#",
+    href: "https://doi.org/10.1088/2053-1591/ae22cb",
   },
   {
     number: "02",
@@ -19,7 +19,7 @@ const projects = [
     technologies: ["Next.js", "React", "TypeScript", "AI"],
     metric: "AI + Web",
     visual: "solar",
-    href: "#",
+    href: "https://solarworksgwapo.netlify.app/",
   },
   {
     number: "03",
