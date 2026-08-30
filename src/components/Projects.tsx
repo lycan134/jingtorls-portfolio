@@ -4,11 +4,19 @@ const projects = [
     category: "Scientific Machine Learning",
     title: "Crystal Structure Formation Energy Prediction",
     description:
-      "A deep-learning application for predicting the formation energy of crystalline materials using chemical and structural information.",
-    technologies: ["Python", "PyTorch", "Materials Project", "Machine Learning"],
-    metric: "R² 0.98",
+      "A deep-learning framework for predicting formation energy and analyzing material stability using chemical composition, physical descriptors, crystallographic symmetry, and stability information.",
+    technologies: [
+      "Python",
+      "PyTorch",
+      "Materials Project",
+      "Deep Learning",
+      "SHAP",
+    ],
+    metric: "R² ≈ 0.98",
     visual: "crystal",
-    href: "https://doi.org/10.1088/2053-1591/ae22cb",
+    href: "/research/crystal-formation-energy",
+    externalHref: "https://doi.org/10.1088/2053-1591/ae22cb",
+    action: "Read Case Study",
   },
   {
     number: "02",
@@ -20,6 +28,7 @@ const projects = [
     metric: "AI + Web",
     visual: "solar",
     href: "https://solarworksgwapo.netlify.app/",
+    action: "View Project",
   },
   {
     number: "03",
@@ -31,6 +40,7 @@ const projects = [
     metric: "Time Series",
     visual: "data",
     href: "#",
+    action: "View Project",
   },
 ];
 
@@ -42,57 +52,189 @@ function ScientificVisual({
   if (type === "crystal") {
     return (
       <div className="relative h-full w-full overflow-hidden">
-        {/* Grid */}
+        {/* Background grid */}
         <div
           className="absolute inset-0 opacity-30"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)",
+              "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
             backgroundSize: "40px 40px",
           }}
         />
 
-        {/* Crystal lattice */}
+        {/* Soft central glow */}
+        <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.025] blur-3xl" />
+
+        {/* Scientific labels */}
+        <div className="absolute left-5 top-5 z-10 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-600 sm:left-6 sm:top-6 sm:text-xs">
+          CRYSTAL_STRUCTURE
+        </div>
+
+        <div className="absolute bottom-5 right-5 z-10 text-right font-mono text-[10px] uppercase tracking-[0.15em] text-zinc-600 sm:bottom-6 sm:right-6 sm:text-xs">
+          <div>SPACE_GROUP → DNN</div>
+          <div className="mt-1">FORMATION_ENERGY</div>
+        </div>
+
+        {/* Crystal structure */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative h-64 w-64 rotate-12">
+          <div className="relative h-52 w-52 sm:h-64 sm:w-64 md:h-72 md:w-72">
+            {/* Connecting lattice lines */}
+            <svg
+              viewBox="0 0 100 100"
+              className="absolute inset-0 h-full w-full"
+              aria-hidden="true"
+            >
+              {/* Horizontal */}
+              <line
+                x1="15"
+                y1="20"
+                x2="85"
+                y2="20"
+                stroke="rgba(255,255,255,0.14)"
+                strokeWidth="0.5"
+              />
+
+              <line
+                x1="15"
+                y1="50"
+                x2="85"
+                y2="50"
+                stroke="rgba(255,255,255,0.14)"
+                strokeWidth="0.5"
+              />
+
+              <line
+                x1="15"
+                y1="80"
+                x2="85"
+                y2="80"
+                stroke="rgba(255,255,255,0.14)"
+                strokeWidth="0.5"
+              />
+
+              {/* Vertical */}
+              <line
+                x1="15"
+                y1="20"
+                x2="15"
+                y2="80"
+                stroke="rgba(255,255,255,0.14)"
+                strokeWidth="0.5"
+              />
+
+              <line
+                x1="50"
+                y1="20"
+                x2="50"
+                y2="80"
+                stroke="rgba(255,255,255,0.14)"
+                strokeWidth="0.5"
+              />
+
+              <line
+                x1="85"
+                y1="20"
+                x2="85"
+                y2="80"
+                stroke="rgba(255,255,255,0.14)"
+                strokeWidth="0.5"
+              />
+
+              {/* Diagonal structural connections */}
+              <line
+                x1="15"
+                y1="20"
+                x2="50"
+                y2="50"
+                stroke="rgba(255,255,255,0.08)"
+                strokeWidth="0.5"
+              />
+
+              <line
+                x1="50"
+                y1="20"
+                x2="85"
+                y2="50"
+                stroke="rgba(255,255,255,0.08)"
+                strokeWidth="0.5"
+              />
+
+              <line
+                x1="15"
+                y1="50"
+                x2="50"
+                y2="80"
+                stroke="rgba(255,255,255,0.08)"
+                strokeWidth="0.5"
+              />
+
+              <line
+                x1="50"
+                y1="50"
+                x2="85"
+                y2="80"
+                stroke="rgba(255,255,255,0.08)"
+                strokeWidth="0.5"
+              />
+            </svg>
+
+            {/* Atoms */}
             {[
-              [20, 20],
+              [15, 20],
               [50, 20],
-              [80, 20],
-              [20, 50],
+              [85, 20],
+              [15, 50],
               [50, 50],
-              [80, 50],
-              [20, 80],
+              [85, 50],
+              [15, 80],
               [50, 80],
-              [80, 80],
+              [85, 80],
             ].map(([x, y], index) => (
               <div
-                key={index}
-                className="absolute h-4 w-4 rounded-full bg-white/60 shadow-[0_0_25px_rgba(255,255,255,0.25)]"
+                key={`atom-${index}`}
+                className="absolute -translate-x-1/2 -translate-y-1/2"
                 style={{
                   left: `${x}%`,
                   top: `${y}%`,
                 }}
-              />
+              >
+                {/* Glow */}
+                <div className="absolute -inset-3 rounded-full bg-white/[0.04] blur-md" />
+
+                {/* Atom */}
+                <div
+                  className={`relative rounded-full border ${
+                    index === 4
+                      ? "h-6 w-6 border-white/50 bg-white/20 sm:h-7 sm:w-7"
+                      : "h-4 w-4 border-white/25 bg-white/10 sm:h-5 sm:w-5"
+                  }`}
+                />
+              </div>
             ))}
 
-            <div className="absolute left-[20%] top-[20%] h-[1px] w-[60%] bg-white/20" />
-            <div className="absolute left-[20%] top-[50%] h-[1px] w-[60%] bg-white/20" />
-            <div className="absolute left-[20%] top-[80%] h-[1px] w-[60%] bg-white/20" />
+            {/* Center atom highlight */}
+            <div className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/70 shadow-[0_0_20px_rgba(255,255,255,0.5)]" />
 
-            <div className="absolute left-[20%] top-[20%] h-[60%] w-[1px] bg-white/20" />
-            <div className="absolute left-[50%] top-[20%] h-[60%] w-[1px] bg-white/20" />
-            <div className="absolute left-[80%] top-[20%] h-[60%] w-[1px] bg-white/20" />
+            {/* Coordinate markers */}
+            <div className="absolute -left-2 top-1/2 h-px w-4 bg-white/20" />
+            <div className="absolute -right-2 top-1/2 h-px w-4 bg-white/20" />
+            <div className="absolute left-1/2 -top-2 h-4 w-px bg-white/20" />
+            <div className="absolute bottom-[-8px] left-1/2 h-4 w-px bg-white/20" />
           </div>
         </div>
 
-        {/* Data labels */}
-        <div className="absolute left-6 top-6 font-mono text-xs text-zinc-600">
-          STRUCTURE_ANALYSIS
+        {/* Bottom-left data readout */}
+        <div className="absolute bottom-5 left-5 hidden font-mono text-[9px] leading-5 text-zinc-700 sm:block sm:left-6 sm:bottom-6">
+          <div>COMPOSITION</div>
+          <div>STRUCTURE</div>
+          <div>STABILITY</div>
         </div>
 
-        <div className="absolute bottom-6 right-6 font-mono text-xs text-zinc-600">
-          SG → FORMATION ENERGY
+        {/* Top-right technical readout */}
+        <div className="absolute right-5 top-5 hidden text-right font-mono text-[9px] leading-5 text-zinc-700 sm:block sm:right-6 sm:top-6">
+          <div>MP_DATASET</div>
+          <div>SPACE_GROUP</div>
+          <div>REGRESSION</div>
         </div>
       </div>
     );
@@ -211,9 +353,11 @@ export default function Projects() {
               key={project.number}
               className="group overflow-hidden rounded-3xl border border-white/10 bg-zinc-950 transition-all duration-500 hover:border-white/20"
             >
-              {/* Scientific visual */}
+              {/* Visual */}
               <div className="relative aspect-[4/3] overflow-hidden bg-zinc-900 sm:aspect-[16/8]">
-                <ScientificVisual type={project.visual as "crystal" | "solar" | "data"} />
+                <ScientificVisual
+                  type={project.visual as "crystal" | "solar" | "data"}
+                />
 
                 {/* Metric */}
                 <div className="absolute right-6 top-6 rounded-full border border-white/10 bg-black/50 px-4 py-2 font-mono text-xs text-zinc-400 backdrop-blur-md">
@@ -245,9 +389,15 @@ export default function Projects() {
 
                   <a
                     href={project.href}
+                    target={project.href.startsWith("http") ? "_blank" : undefined}
+                    rel={
+                      project.href.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
                     className="inline-flex shrink-0 items-center gap-3 text-sm font-medium transition-colors hover:text-zinc-400"
                   >
-                    View Project
+                    {project.action}
                     <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">
                       →
                     </span>
@@ -265,11 +415,33 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
+
+                {/* Research links */}
+                {project.number === "01" && (
+                  <div className="mt-6 flex flex-wrap gap-5 text-xs font-mono text-zinc-600">
+                    <a
+                      href="https://doi.org/10.1088/2053-1591/ae22cb"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-zinc-300"
+                    >
+                      DOI ↗
+                    </a>
+
+                    <a
+                      href="https://github.com/lycan134/formation-energy-prediction"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-zinc-300"
+                    >
+                      GITHUB ↗
+                    </a>
+                  </div>
+                )}
               </div>
             </article>
           ))}
         </div>
-
       </div>
     </section>
   );
