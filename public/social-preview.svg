@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0b0d0c"/>
+  <path d="M0 470h1200M0 530h1200" stroke="#1c2420" stroke-width="1"/>
+  <circle cx="1030" cy="140" r="250" fill="#b9f7d0" opacity=".06"/>
+  <text x="84" y="150" fill="#b9f7d0" font-family="Arial,sans-serif" font-size="22" letter-spacing="5">SOFTWARE ENGINEERING · AI · RESEARCH</text>
+  <text x="80" y="305" fill="#f2f4ef" font-family="Arial,sans-serif" font-size="72" font-weight="700">Virginio C. Torlao</text>
+  <text x="84" y="375" fill="#a3aaa5" font-family="Arial,sans-serif" font-size="34">Junior Full-Stack Developer</text>
+  <text x="84" y="555" fill="#737c76" font-family="monospace" font-size="19">REACT · PYTHON · FASTAPI · POSTGRESQL</text>
+</svg>

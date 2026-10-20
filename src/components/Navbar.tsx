@@ -34,10 +34,10 @@ export default function Navbar() {
             </a>
 
             <a
-              href="#services"
+              href="#skills"
               className="transition-colors hover:text-white"
             >
-              Services
+              Skills
             </a>
 
             <a
@@ -45,13 +45,6 @@ export default function Navbar() {
               className="transition-colors hover:text-white"
             >
               About
-            </a>
-
-            <a
-              href="#research"
-              className="transition-colors hover:text-white"
-            >
-              Research
             </a>
 
             <a
@@ -67,6 +60,7 @@ export default function Navbar() {
             type="button"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle navigation menu"
+            aria-controls="mobile-navigation"
             aria-expanded={menuOpen}
             className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-zinc-300 transition hover:border-white/30 md:hidden"
           >
@@ -78,7 +72,7 @@ export default function Navbar() {
 
         {/* Mobile navigation */}
         {menuOpen && (
-          <div className="border-t border-white/10 py-6 md:hidden">
+          <div id="mobile-navigation" className="border-t border-white/10 py-6 md:hidden">
             <div className="flex flex-col gap-1">
 
               <a
@@ -90,11 +84,11 @@ export default function Navbar() {
               </a>
 
               <a
-                href="#services"
+                href="#skills"
                 onClick={closeMenu}
                 className="rounded-xl px-4 py-3 text-zinc-400 transition hover:bg-white/5 hover:text-white"
               >
-                Services
+                Skills
               </a>
 
               <a
@@ -103,14 +97,6 @@ export default function Navbar() {
                 className="rounded-xl px-4 py-3 text-zinc-400 transition hover:bg-white/5 hover:text-white"
               >
                 About
-              </a>
-
-              <a
-                href="#research"
-                onClick={closeMenu}
-                className="rounded-xl px-4 py-3 text-zinc-400 transition hover:bg-white/5 hover:text-white"
-              >
-                Research
               </a>
 
               <a

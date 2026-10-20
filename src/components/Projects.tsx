@@ -1,443 +1,95 @@
 const projects = [
   {
     number: "01",
-    category: "Scientific Machine Learning",
-    title: "Crystal Structure Formation Energy Prediction",
+    category: "Full-stack application · in development",
+    title: "NotaryFlow",
     description:
-      "A deep-learning framework for predicting formation energy and analyzing material stability using chemical composition, physical descriptors, crystallographic symmetry, and stability information.",
-    technologies: [
-      "Python",
-      "PyTorch",
-      "Materials Project",
-      "Deep Learning",
-      "SHAP",
-    ],
-    metric: "R² ≈ 0.98",
-    visual: "crystal",
-    href: "/research/crystal-formation-energy",
-    externalHref: "https://doi.org/10.1088/2053-1591/ae22cb",
-    action: "Read Case Study",
+      "A business application exploring how a React/Vite client can work with a Python API and relational data. The repository is linked for a closer look; implementation details and completion status should be confirmed against its source before treating specific features as finished.",
+    technologies: ["React", "Vite", "Python", "FastAPI", "PostgreSQL"],
+    href: "https://github.com/lycan134/notaryflow",
+    action: "Explore source",
+    visual: "api",
   },
   {
     number: "02",
-    category: "Web Development + AI",
-    title: "Solar Business Website & AI Assistant",
+    category: "Web · live project",
+    title: "Xhyza Maria Christening Invitation",
     description:
-      "A business website concept combining a modern customer experience, solar information, lead generation, and an AI-powered assistant.",
-    technologies: ["Next.js", "React", "TypeScript", "AI"],
-    metric: "AI + Web",
-    visual: "solar",
-    href: "https://solarworksgwapo.netlify.app/",
-    action: "View Project",
+      "A live invitation website built with a modern React and Next.js stack. The project demonstrates a focused, responsive experience for a personal event; social preview details are part of the site's sharing experience.",
+    technologies: ["Next.js", "React", "Responsive UI", "Vercel"],
+    href: "https://xhyza-christening-w9d3.vercel.app/",
+    action: "Visit live site",
+    visual: "web",
   },
   {
     number: "03",
-    category: "Computational Data Science",
-    title: "Financial Time-Series Analysis",
+    category: "Product concept · prototype",
+    title: "VZX Labs",
     description:
-      "A computational project exploring financial market time series using multifractal analysis and machine-learning techniques.",
-    technologies: ["Python", "MFDFA", "Data Science", "Machine Learning"],
-    metric: "Time Series",
-    visual: "data",
-    href: "#",
-    action: "View Project",
+      "A photo-to-3D-printing product concept. The portfolio includes a privacy policy for a Messenger assistant, but this page does not establish that photo-based 3D reconstruction or a complete customer workflow is implemented.",
+    technologies: ["Product exploration", "Web", "3D printing concept"],
+    href: "https://github.com/lycan134",
+    action: "View GitHub profile",
+    visual: "concept",
+  },
+  {
+    number: "04",
+    category: "Research · published 2025",
+    title: "Formation-Energy Prediction Using Deep Learning",
+    description:
+      "A scientific machine-learning study of formation energy in material crystal structures. The work combines composition, physical descriptors, crystallographic symmetry, and stability information, then uses model evaluation and SHAP analysis to examine predictive performance and feature contributions.",
+    technologies: ["Python", "PyTorch", "Deep learning", "SHAP", "Materials science"],
+    href: "/research/crystal-formation-energy",
+    externalHref: "https://github.com/lycan134/formation-energy-prediction",
+    publicationHref: "https://doi.org/10.1088/2053-1591/ae22cb",
+    action: "Read research case study",
+    visual: "research",
   },
 ];
 
-function ScientificVisual({
-  type,
-}: {
-  type: "crystal" | "solar" | "data";
-}) {
-  if (type === "crystal") {
-    return (
-      <div className="relative h-full w-full overflow-hidden">
-        {/* Background grid */}
-        <div
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-
-        {/* Soft central glow */}
-        <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.025] blur-3xl" />
-
-        {/* Scientific labels */}
-        <div className="absolute left-5 top-5 z-10 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-600 sm:left-6 sm:top-6 sm:text-xs">
-          CRYSTAL_STRUCTURE
-        </div>
-
-        <div className="absolute bottom-5 right-5 z-10 text-right font-mono text-[10px] uppercase tracking-[0.15em] text-zinc-600 sm:bottom-6 sm:right-6 sm:text-xs">
-          <div>SPACE_GROUP → DNN</div>
-          <div className="mt-1">FORMATION_ENERGY</div>
-        </div>
-
-        {/* Crystal structure */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative h-52 w-52 sm:h-64 sm:w-64 md:h-72 md:w-72">
-            {/* Connecting lattice lines */}
-            <svg
-              viewBox="0 0 100 100"
-              className="absolute inset-0 h-full w-full"
-              aria-hidden="true"
-            >
-              {/* Horizontal */}
-              <line
-                x1="15"
-                y1="20"
-                x2="85"
-                y2="20"
-                stroke="rgba(255,255,255,0.14)"
-                strokeWidth="0.5"
-              />
-
-              <line
-                x1="15"
-                y1="50"
-                x2="85"
-                y2="50"
-                stroke="rgba(255,255,255,0.14)"
-                strokeWidth="0.5"
-              />
-
-              <line
-                x1="15"
-                y1="80"
-                x2="85"
-                y2="80"
-                stroke="rgba(255,255,255,0.14)"
-                strokeWidth="0.5"
-              />
-
-              {/* Vertical */}
-              <line
-                x1="15"
-                y1="20"
-                x2="15"
-                y2="80"
-                stroke="rgba(255,255,255,0.14)"
-                strokeWidth="0.5"
-              />
-
-              <line
-                x1="50"
-                y1="20"
-                x2="50"
-                y2="80"
-                stroke="rgba(255,255,255,0.14)"
-                strokeWidth="0.5"
-              />
-
-              <line
-                x1="85"
-                y1="20"
-                x2="85"
-                y2="80"
-                stroke="rgba(255,255,255,0.14)"
-                strokeWidth="0.5"
-              />
-
-              {/* Diagonal structural connections */}
-              <line
-                x1="15"
-                y1="20"
-                x2="50"
-                y2="50"
-                stroke="rgba(255,255,255,0.08)"
-                strokeWidth="0.5"
-              />
-
-              <line
-                x1="50"
-                y1="20"
-                x2="85"
-                y2="50"
-                stroke="rgba(255,255,255,0.08)"
-                strokeWidth="0.5"
-              />
-
-              <line
-                x1="15"
-                y1="50"
-                x2="50"
-                y2="80"
-                stroke="rgba(255,255,255,0.08)"
-                strokeWidth="0.5"
-              />
-
-              <line
-                x1="50"
-                y1="50"
-                x2="85"
-                y2="80"
-                stroke="rgba(255,255,255,0.08)"
-                strokeWidth="0.5"
-              />
-            </svg>
-
-            {/* Atoms */}
-            {[
-              [15, 20],
-              [50, 20],
-              [85, 20],
-              [15, 50],
-              [50, 50],
-              [85, 50],
-              [15, 80],
-              [50, 80],
-              [85, 80],
-            ].map(([x, y], index) => (
-              <div
-                key={`atom-${index}`}
-                className="absolute -translate-x-1/2 -translate-y-1/2"
-                style={{
-                  left: `${x}%`,
-                  top: `${y}%`,
-                }}
-              >
-                {/* Glow */}
-                <div className="absolute -inset-3 rounded-full bg-white/[0.04] blur-md" />
-
-                {/* Atom */}
-                <div
-                  className={`relative rounded-full border ${
-                    index === 4
-                      ? "h-6 w-6 border-white/50 bg-white/20 sm:h-7 sm:w-7"
-                      : "h-4 w-4 border-white/25 bg-white/10 sm:h-5 sm:w-5"
-                  }`}
-                />
-              </div>
-            ))}
-
-            {/* Center atom highlight */}
-            <div className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/70 shadow-[0_0_20px_rgba(255,255,255,0.5)]" />
-
-            {/* Coordinate markers */}
-            <div className="absolute -left-2 top-1/2 h-px w-4 bg-white/20" />
-            <div className="absolute -right-2 top-1/2 h-px w-4 bg-white/20" />
-            <div className="absolute left-1/2 -top-2 h-4 w-px bg-white/20" />
-            <div className="absolute bottom-[-8px] left-1/2 h-4 w-px bg-white/20" />
-          </div>
-        </div>
-
-        {/* Bottom-left data readout */}
-        <div className="absolute bottom-5 left-5 hidden font-mono text-[9px] leading-5 text-zinc-700 sm:block sm:left-6 sm:bottom-6">
-          <div>COMPOSITION</div>
-          <div>STRUCTURE</div>
-          <div>STABILITY</div>
-        </div>
-
-        {/* Top-right technical readout */}
-        <div className="absolute right-5 top-5 hidden text-right font-mono text-[9px] leading-5 text-zinc-700 sm:block sm:right-6 sm:top-6">
-          <div>MP_DATASET</div>
-          <div>SPACE_GROUP</div>
-          <div>REGRESSION</div>
-        </div>
-      </div>
-    );
-  }
-
-  if (type === "solar") {
-    return (
-      <div className="relative h-full w-full overflow-hidden">
-        {/* Grid */}
-        <div
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-
-        {/* Sun */}
-        <div className="absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/20">
-          <div className="absolute inset-4 rounded-full border border-white/20" />
-          <div className="absolute inset-8 rounded-full bg-white/10 blur-xl" />
-        </div>
-
-        {/* Energy lines */}
-        <div className="absolute left-[15%] top-1/2 h-px w-[70%] bg-white/20" />
-        <div className="absolute left-1/2 top-[15%] h-[70%] w-px bg-white/20" />
-
-        <div className="absolute left-6 top-6 font-mono text-xs text-zinc-600">
-          ENERGY_ANALYSIS
-        </div>
-
-        <div className="absolute bottom-6 left-6 font-mono text-xs text-zinc-600">
-          SOLAR → STORAGE → HOME
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="relative h-full w-full overflow-hidden">
-      {/* Grid */}
-      <div
-        className="absolute inset-0 opacity-30"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-      />
-
-      {/* Data visualization */}
-      <svg
-        viewBox="0 0 800 350"
-        className="absolute inset-0 h-full w-full"
-        preserveAspectRatio="none"
-      >
-        <polyline
-          points="0,270 70,250 120,265 180,190 240,220 300,150 350,175 410,110 470,135 530,90 600,125 660,70 730,100 800,45"
-          fill="none"
-          stroke="rgba(255,255,255,0.5)"
-          strokeWidth="2"
-        />
-
-        <polyline
-          points="0,300 80,290 140,305 210,275 280,285 350,240 420,255 500,210 570,230 640,190 720,205 800,170"
-          fill="none"
-          stroke="rgba(255,255,255,0.15)"
-          strokeWidth="2"
-        />
-      </svg>
-
-      <div className="absolute left-6 top-6 font-mono text-xs text-zinc-600">
-        TIME_SERIES_ANALYSIS
-      </div>
-
-      <div className="absolute bottom-6 right-6 font-mono text-xs text-zinc-600">
-        MULTIFRACTAL ANALYSIS
-      </div>
-    </div>
-  );
-}
+const art: Record<string, { label: string; detail: string }> = {
+  api: { label: "REQUEST → API → DATA", detail: "APPLICATION ENGINEERING" },
+  web: { label: "A MOMENT, MADE PERSONAL", detail: "RESPONSIVE WEB EXPERIENCE" },
+  concept: { label: "PHOTO → OBJECT", detail: "PRODUCT CONCEPT" },
+  research: { label: "STRUCTURE → PROPERTY", detail: "SCIENTIFIC MACHINE LEARNING" },
+};
 
 export default function Projects() {
   return (
-    <section
-      id="work"
-      className="portfolio-section border-t border-white/10 bg-transparent px-6 py-32 text-white"
-    >
+    <section id="work" className="portfolio-section border-t border-white/10 px-6 py-24 text-white sm:py-32">
       <div className="mx-auto max-w-7xl">
-
-        {/* Header */}
-        <div className="mb-20 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+        <div className="mb-14 grid gap-6 md:grid-cols-[1fr_0.7fr] md:items-end sm:mb-20">
           <div>
-            <p className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-zinc-500">
-              Selected Work
-            </p>
-
-            <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
-              Projects that
-              <br />
-              <span className="text-zinc-500">solve problems.</span>
-            </h2>
+            <p className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-zinc-500">Selected work</p>
+            <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">Building, learning,<br /><span className="text-zinc-500">and investigating.</span></h2>
           </div>
-
-          <p className="max-w-md text-lg leading-8 text-zinc-400">
-            Technical, scientific, and web development projects built around
-            practical problems and measurable outcomes.
-          </p>
+          <p className="max-w-xl text-base leading-7 text-zinc-400 sm:text-lg sm:leading-8">A mix of application development and computational research, with project status stated clearly.</p>
         </div>
 
-        {/* Project cards */}
-        <div className="space-y-10">
+        <div className="grid gap-5 lg:grid-cols-2">
           {projects.map((project) => (
-            <article
-              key={project.number}
-              className="group overflow-hidden rounded-3xl border border-white/10 bg-zinc-950 transition-all duration-500 hover:border-white/20"
-            >
-              {/* Visual */}
-              <div className="relative aspect-[4/3] overflow-hidden bg-zinc-900 sm:aspect-[16/8]">
-                <ScientificVisual
-                  type={project.visual as "crystal" | "solar" | "data"}
-                />
-
-                {/* Metric */}
-                <div className="absolute right-6 top-6 rounded-full border border-white/10 bg-black/50 px-4 py-2 font-mono text-xs text-zinc-400 backdrop-blur-md">
-                  {project.metric}
+            <article key={project.number} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#101311] transition-colors hover:border-white/20">
+              <div className="relative flex aspect-[16/8] items-center justify-center overflow-hidden border-b border-white/10 bg-[#0c0f0d] p-7 sm:p-10">
+                <div aria-hidden="true" className="absolute inset-0 opacity-40" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+                <div className="relative z-10 w-full max-w-lg rounded-xl border border-white/15 bg-black/45 p-5 font-mono text-xs text-zinc-400 shadow-2xl sm:p-7">
+                  <div className="mb-8 flex items-center justify-between text-[10px] uppercase tracking-[0.16em] text-zinc-600"><span>PROJECT_{project.number}</span><span>PORTFOLIO / 2026</span></div>
+                  <p className="text-sm tracking-[0.12em] text-[#b9f7d0] sm:text-base">{art[project.visual].label}</p>
+                  <div className="my-5 h-px bg-white/10" />
+                  <p className="text-[10px] tracking-[0.16em] text-zinc-600">{art[project.visual].detail}</p>
                 </div>
-
-                {/* Category */}
-                <div className="absolute bottom-6 left-6 rounded-full border border-white/10 bg-black/50 px-4 py-2 text-xs uppercase tracking-[0.2em] text-zinc-400 backdrop-blur-md">
-                  {project.category}
-                </div>
+                <span className="absolute right-4 top-4 rounded-full border border-white/10 bg-black/60 px-3 py-1.5 text-[10px] uppercase tracking-wider text-zinc-400 sm:right-6 sm:top-6">{project.category}</span>
               </div>
-
-              {/* Content */}
-              <div className="p-8 md:p-10">
-                <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-                  <div className="max-w-3xl">
-                    <p className="mb-3 font-mono text-xs text-zinc-600">
-                      PROJECT_{project.number}
-                    </p>
-
-                    <h3 className="text-3xl font-medium tracking-tight md:text-4xl">
-                      {project.title}
-                    </h3>
-
-                    <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-400">
-                      {project.description}
-                    </p>
-                  </div>
-
-                  <a
-                    href={project.href}
-                    target={project.href.startsWith("http") ? "_blank" : undefined}
-                    rel={
-                      project.href.startsWith("http")
-                        ? "noopener noreferrer"
-                        : undefined
-                    }
-                    className="inline-flex shrink-0 items-center gap-3 text-sm font-medium transition-colors hover:text-zinc-400"
-                  >
-                    {project.action}
-                    <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">
-                      →
-                    </span>
-                  </a>
+              <div className="flex flex-1 flex-col p-6 sm:p-8">
+                <h3 className="text-2xl font-medium tracking-tight sm:text-3xl">{project.title}</h3>
+                <p className="mt-4 flex-1 text-sm leading-7 text-zinc-400 sm:text-base">{project.description}</p>
+                <div className="mt-6 flex flex-wrap gap-2 border-t border-white/10 pt-5">
+                  {project.technologies.map((tag) => <span key={tag} className="rounded-full border border-white/10 px-3 py-1.5 font-mono text-[10px] text-zinc-400 sm:text-xs">{tag}</span>)}
                 </div>
-
-                {/* Technologies */}
-                <div className="mt-8 flex flex-wrap gap-2 border-t border-white/10 pt-6">
-                  {project.technologies.map((technology) => (
-                    <span
-                      key={technology}
-                      className="rounded-full border border-white/10 px-3 py-1.5 font-mono text-xs text-zinc-500"
-                    >
-                      {technology}
-                    </span>
-                  ))}
+                <div className="mt-6 flex flex-wrap gap-5 text-sm font-medium">
+                  <a href={project.href} target={project.href.startsWith("http") ? "_blank" : undefined} rel={project.href.startsWith("http") ? "noopener noreferrer" : undefined} className="inline-flex min-h-10 items-center gap-2 text-white underline decoration-white/20 underline-offset-4 transition hover:decoration-[#b9f7d0] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#b9f7d0]">{project.action}<span aria-hidden="true">↗</span></a>
+                  {project.externalHref && <a href={project.externalHref} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center gap-2 text-zinc-400 underline decoration-white/10 underline-offset-4 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#b9f7d0]">Source code<span aria-hidden="true">↗</span></a>}
+                  {"publicationHref" in project && project.publicationHref && <a href={project.publicationHref} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center gap-2 text-zinc-400 underline decoration-white/10 underline-offset-4 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#b9f7d0]">Publication<span aria-hidden="true">↗</span></a>}
                 </div>
-
-                {/* Research links */}
-                {project.number === "01" && (
-                  <div className="mt-6 flex flex-wrap gap-5 text-xs font-mono text-zinc-600">
-                    <a
-                      href="https://doi.org/10.1088/2053-1591/ae22cb"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="transition-colors hover:text-zinc-300"
-                    >
-                      DOI ↗
-                    </a>
-
-                    <a
-                      href="https://github.com/lycan134/formation-energy-prediction"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="transition-colors hover:text-zinc-300"
-                    >
-                      GITHUB ↗
-                    </a>
-                  </div>
-                )}
               </div>
             </article>
           ))}

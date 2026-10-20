@@ -27,9 +27,7 @@ export default function Contact() {
           <div className="max-w-xl">
 
             <p className="text-lg leading-8 text-zinc-400">
-              Have a project, research idea, or business problem that could
-              benefit from software, AI, or data? I&apos;d be glad to hear
-              about it.
+              I’m open to conversations about junior software engineering roles, project collaboration, and research software.
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -76,7 +74,7 @@ export default function Contact() {
             </span>
 
             <span>
-              Available for selected projects
+              Open to junior developer opportunities
             </span>
           </div>
         </div>

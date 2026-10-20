@@ -10,7 +10,7 @@ export default function Footer() {
           </p>
 
           <p className="mt-1 text-sm text-zinc-600">
-            Web Development · AI · Computational Science
+            Full-stack development · AI · Computational research
           </p>
         </div>
 
@@ -30,12 +30,7 @@ export default function Footer() {
             About
           </a>
 
-          <a
-            href="#research"
-            className="transition-colors hover:text-white"
-          >
-            Research
-          </a>
+          <a href="#skills" className="transition-colors hover:text-white">Skills</a>
 
           <a
             href="mailto:virginiotorlao@gmail.com"
@@ -63,7 +58,7 @@ export default function Footer() {
         </span>
 
         <span>
-          Built with Next.js · React · TypeScript
+          Built with Next.js · React
         </span>
       </div>
     </footer>

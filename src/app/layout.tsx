@@ -1,23 +1,32 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const title = "Virginio C. Torlao | Junior Full-Stack Developer";
+const description = "Junior full-stack developer working with React, Next.js, Python, FastAPI, and PostgreSQL, with a background in computational research and machine learning.";
+
 export const metadata: Metadata = {
-  title: "Virginio C. Torlao | Web Developer & Computational Scientist",
-  description:
-    "Portfolio of Virginio C. Torlao featuring web development, AI-powered applications, computational science, machine learning, and physics research.",
+  metadataBase: new URL("https://jingtorls-portfolio.vercel.app"),
+  title,
+  description,
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Virginio C. Torlao | Web Developer & Computational Scientist",
-    description:
-      "Web development, AI, and computational science for useful digital products.",
+    title,
+    description,
+    url: "https://jingtorls-portfolio.vercel.app/",
+    siteName: "Virginio C. Torlao Portfolio",
     type: "website",
+    images: [{ url: "/social-preview.svg", width: 1200, height: 630, alt: "Virginio C. Torlao — Junior Full-Stack Developer" }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/social-preview.svg"],
+  },
+  icons: { icon: "/favicon.ico" },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body>{children}</body>

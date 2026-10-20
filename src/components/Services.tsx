@@ -1,101 +1,23 @@
-const services = [
-  {
-    number: "01",
-    title: "Business Websites",
-    description:
-      "Modern, responsive websites designed to establish your brand online and turn visitors into potential customers.",
-    tags: ["Next.js", "React", "Responsive Design"],
-  },
-  {
-    number: "02",
-    title: "Web Applications",
-    description:
-      "Custom web applications, dashboards, portals, and tools built around your specific workflow and business needs.",
-    tags: ["React", "TypeScript", "Python"],
-  },
-  {
-    number: "03",
-    title: "AI-Powered Tools",
-    description:
-      "Practical AI integrations including customer assistants, chatbots, automation, and intelligent data-driven features.",
-    tags: ["AI", "Python", "APIs"],
-  },
-  {
-    number: "04",
-    title: "Scientific & Data Applications",
-    description:
-      "Computational tools, machine-learning applications, interactive visualizations, and research-oriented software.",
-    tags: ["Python", "Machine Learning", "Data"],
-  },
+const skillGroups = [
+  { title: "Frontend", skills: ["React", "Next.js", "JavaScript", "HTML", "CSS"] },
+  { title: "Backend", skills: ["Python", "FastAPI", "REST APIs", "SQLAlchemy"] },
+  { title: "Databases", skills: ["PostgreSQL", "SQL", "Alembic migrations"] },
+  { title: "Engineering practice", skills: ["Git & GitHub", "Docker", "Automated testing", "Debugging"] },
+  { title: "AI & research", skills: ["Machine learning", "PyTorch", "Scientific computing", "AI-assisted development"] },
 ];
 
 export default function Services() {
   return (
-    <section
-      id="services"
-      className="portfolio-section border-t border-white/10 bg-transparent px-6 py-32 text-white"
-    >
+    <section id="skills" className="portfolio-section border-t border-white/10 px-6 py-20 text-white sm:py-28">
       <div className="mx-auto max-w-7xl">
-        {/* Section heading */}
-        <div className="mb-20 grid gap-8 md:grid-cols-2">
-          <div>
-            <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-zinc-500">
-              What I Build
-            </p>
-
-            <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
-              Digital products
-              <br />
-              <span className="text-zinc-500">with purpose.</span>
-            </h2>
-          </div>
-
-          <div className="flex items-end">
-            <p className="max-w-xl text-lg leading-8 text-zinc-400">
-              From business websites to AI-powered applications, I build
-              digital experiences that solve practical problems and make
-              complex technology easier to use.
-            </p>
-          </div>
+        <div className="mb-12 grid gap-6 md:grid-cols-[1fr_0.7fr] md:items-end sm:mb-16">
+          <div><p className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-zinc-500">Technical toolkit</p><h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">Skills I use<br /><span className="text-zinc-500">to build and learn.</span></h2></div>
+          <p className="max-w-xl text-base leading-7 text-zinc-400">A practical toolkit grounded in personal projects and research. I’m continuing to deepen my full-stack engineering practice.</p>
         </div>
-
-        {/* Services */}
-        <div className="border-t border-white/10">
-          {services.map((service) => (
-            <div
-              key={service.number}
-              className="group grid gap-6 border-b border-white/10 py-10 transition-colors hover:bg-white/[0.02] md:grid-cols-[80px_1fr_1.5fr]"
-            >
-              {/* Number */}
-              <div className="text-sm text-zinc-600">
-                {service.number}
-              </div>
-
-              {/* Title */}
-              <h3 className="text-2xl font-medium tracking-tight">
-                {service.title}
-              </h3>
-
-              {/* Description */}
-              <div>
-                <p className="mb-5 max-w-xl leading-7 text-zinc-400">
-                  {service.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {service.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-white/10 px-3 py-1 text-xs text-zinc-500"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {skillGroups.map((group) => <article key={group.title} className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-7"><h3 className="text-lg font-medium">{group.title}</h3><ul className="mt-5 flex flex-wrap gap-2">{group.skills.map((skill) => <li key={skill} className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-zinc-400">{skill}</li>)}</ul></article>)}
         </div>
+        <p className="mt-5 text-xs leading-6 text-zinc-600">I’m presenting technologies supported by the projects and background described here. This portfolio does not list TypeScript, Angular, C#/.NET, CI/CD, or cloud platforms as established skills.</p>
       </div>
     </section>
   );

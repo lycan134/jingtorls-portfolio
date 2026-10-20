@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const stats = [
   {
     value: "153,232",
@@ -62,13 +64,13 @@ export default function CrystalFormationEnergyPage() {
 
         <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-24 md:py-36">
           {/* Back */}
-          <a
+          <Link
             href="/#work"
             className="mb-12 inline-flex min-h-[44px] items-center gap-3 font-mono text-[10px] uppercase tracking-[0.18em] text-zinc-500 transition-colors hover:text-white sm:mb-16 sm:text-xs sm:tracking-[0.2em]"
           >
             <span className="text-base">←</span>
             Back to selected work
-          </a>
+          </Link>
 
           {/* Eyebrow */}
           <div className="mb-7 flex flex-wrap items-center gap-2.5 sm:mb-8 sm:gap-3">
